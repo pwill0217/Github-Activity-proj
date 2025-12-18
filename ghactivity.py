@@ -1,8 +1,18 @@
 
 #githubendpoint = "https://api.github.com/users/{username}/events/public"
+
+#CreateEvent
+#“{username} created {ref_type} {repo_name}”
+#PushEvent
+#“{username} pushed commits to {repo_name}”
+#WatchEvent
+#“{username} starred {repo_name}”
+#PullRequestEvent
+#“{username} opened a pull request in {repo_name}”
+
 import requests
 import json
-token = ""
+token = "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"
 
 
 headers = {
@@ -23,7 +33,14 @@ events = data.json()
 
 print(f"Recent public events for user: {username}")
 for event in events:
-    event_type = event.get("type", "N/A")
+    event_type = event.get("type")
     repo_name = event.get("repo", {}).get("name", "N/A")
     created_at = event.get("created_at", "N/A")
-    print(f"Event Type: {event_type}, Repository: {repo_name}, Created At: {created_at}")
+    if event_type == "CreateEvent":
+        print(f"{username} created {repo_name}")
+    elif event_type == "PushEvent":
+        print (f"{username} pushed to {repo_name}")
+    elif event_type == "DeleteEvent":
+        print (f"{username} deleted {repo_name}")
+
+    
