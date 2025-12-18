@@ -1,5 +1,5 @@
 
-#githubendpoint = "https://api.github.com/users/{username}/events/public"
+
 
 #CreateEvent
 #“{username} created {ref_type} {repo_name}”
