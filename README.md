@@ -9,3 +9,5 @@ Supports multiple GitHub event types including repository creation, pushes, and 
 Translates raw JSON API responses into readable sentences
 Simple command line interface
 Uses the official GitHub REST API
+
+https://github.com/pwill0217/Github-Activity-proj/tree/main
