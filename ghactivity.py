@@ -12,7 +12,7 @@
 
 import requests
 import json
-token = "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"
+token = ""
 
 
 headers = {
@@ -41,6 +41,6 @@ for event in events:
     elif event_type == "PushEvent":
         print (f"{username} pushed to {repo_name}")
     elif event_type == "DeleteEvent":
-        print (f"{username} deleted {repo_name}")
+        print (f"{username} pushed to {repo_name}")
 
     
